@@ -15,8 +15,8 @@ public:
     void clear(sf::Color color);
     void poll();
     void close();
+    void set_font(sf::Font);
     void set_pen(int x = 0, int y = 0);
-    void set_font(const std::string new_font);
     void write(const sf::Color color, const std::string text);
 
 private:

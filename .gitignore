@@ -1,6 +1,6 @@
 *.log
 *.o
 verlies
-/Debug
-/Release
+/bin/Debug
+/bin/Release
 /obj

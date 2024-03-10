@@ -66,20 +66,16 @@ void Window::close()
 
 }
 
+void Window::set_font(sf::Font font)
+{
+    m_font = font;
+
+}
+
 void Window::set_pen(int x, int y)
 {
     m_pen_x = x;
     m_pen_y = y;
-
-}
-
-void Window::set_font(const std::string new_font)
-{
-    if(!m_font.loadFromFile(new_font))
-    {
-        Log("Couldn't load font: " << new_font.c_str());
-
-    }
 
 }
 

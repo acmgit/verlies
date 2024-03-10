@@ -15,16 +15,13 @@
 
 Resource_Manager::Resource_Manager()
 {
-
-    std::setlocale(LC_ALL, "");
-    textdomain("verlies");
-    bindtextdomain("verlies", "locale");
-
     Log("Loading Resources.");
 
     try
     {
         m_Output = new Window(_("Mainwindow"), sf::Vector2u(800, 600));
+        m_font.loadFromFile("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
+        m_Output->set_font(m_font);
 
     }
     catch(std::exception& ex)
@@ -36,7 +33,7 @@ Resource_Manager::Resource_Manager()
 
     m_Output->write(sf::Color::White, "Loading ...");
 
-    Log("Ressource-Manager opened.");
+    Log("Resource-Manager opened.");
 }
 
 Resource_Manager::~Resource_Manager()
@@ -50,7 +47,7 @@ Resource_Manager::~Resource_Manager()
 
     }
 
-    Log("Ressource-Manager closed.")
+    Log("Resource-Manager closed.")
 
 }
 
@@ -59,4 +56,18 @@ Window* Resource_Manager::get_Windowhandle()
     return m_Output;
 
 }
+
+void Resource_Manager::set_font(const std::string new_font)
+{
+    if(!m_font.loadFromFile(new_font))
+    {
+        Log("Couldn't load font: " << new_font.c_str());
+        return;
+    }
+
+    m_Output->set_font(m_font);
+    Log("Font " << new_font.c_str() << " loaded.");
+
+}
+
 #endif // RESOURCE_MANAGER_CPP

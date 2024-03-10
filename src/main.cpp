@@ -40,15 +40,12 @@ int main()
     textdomain("verlies");
 
     Window* Main_Win;
-
     Resources = new Resource_Manager();
     Main_Win = Resources->get_Windowhandle();
 
-    Main_Win->clear(sf::Color::Black);
+    Resources->set_font("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
     Main_Win->set_pen(10, 200);
-    Main_Win->set_font("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
     Main_Win->write(sf::Color::Blue, _("Test .."));
-
     Main_Win->poll();
 
     if(Main_Win)

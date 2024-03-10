@@ -11,11 +11,12 @@ public:
     ~Resource_Manager();
 
     Window* get_Windowhandle();
+    void set_font(const std::string new_font);
 
 private:
 
     Window* m_Output;
-
+    sf::Font m_font;
 
 };
 
