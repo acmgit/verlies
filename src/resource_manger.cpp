@@ -22,6 +22,7 @@ Resource_Manager::Resource_Manager()
         m_Output = new Window(_("Mainwindow"), sf::Vector2u(800, 600));
         m_font.loadFromFile("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
         m_Output->set_font(m_font);
+        m_Output->set_font_size(16);
 
     }
     catch(std::exception& ex)

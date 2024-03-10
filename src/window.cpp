@@ -79,6 +79,12 @@ void Window::set_pen(int x, int y)
 
 }
 
+void Window::set_font_size(int character_size)
+{
+    m_font_size = character_size;
+
+}
+
 void Window::write(const sf::Color Color, const std::string text)
 {
     sf::Text line;
@@ -86,6 +92,7 @@ void Window::write(const sf::Color Color, const std::string text)
     line.setFont(m_font);
     line.setString(text);
     line.setFillColor(Color);
+    line.setCharacterSize(m_font_size);
     line.move(m_pen_x, m_pen_y);
 
     m_handle.draw(line);

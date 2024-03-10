@@ -17,6 +17,7 @@ public:
     void close();
     void set_font(sf::Font);
     void set_pen(int x = 0, int y = 0);
+    void set_font_size(int character_size = 8);
     void write(const sf::Color color, const std::string text);
 
 private:
@@ -29,6 +30,7 @@ private:
     unsigned int m_width;
     unsigned int m_height;
 
+    int m_font_size;
     sf::Font m_font;
     std::string m_title;
 
