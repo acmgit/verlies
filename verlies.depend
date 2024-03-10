@@ -13,12 +13,15 @@
 1709946637 source:/home/acm/mygit/verlies/src/Logfile.cpp
 	"Logfile.h"
 
-1710038059 source:/home/acm/mygit/verlies/src/main.cpp
+1710096151 source:/home/acm/mygit/verlies/src/main.cpp
 	<iostream>
 	<stdexcept>
+	<libintl.h>
+	<clocale>
 	<SFML/Graphics.hpp>
 	"include/Logfile.h"
 	"window.h"
+	"resource_manager.h"
 
 1710000372 source:/home/acm/mygit/verlies/src/core.cpp
 	<string>
@@ -38,4 +41,30 @@
 1710039117 /home/acm/mygit/verlies/src/include/window.h
 	<string>
 	<SFML/Graphics.hpp>
+
+1710090812 source:/home/acm/mygit/verlies/src/ressource_manger.cpp
+	<iostream>
+	<fstream>
+	<stdexcept>
+	"ressource_manager.h"
+	"window.h"
+	"Logfile.h"
+
+1710090794 /home/acm/mygit/verlies/src/include/ressource_manager.h
+	"SFML/Graphics.hpp"
+	"window.h"
+
+1710092293 /home/acm/mygit/verlies/src/include/resource_manager.h
+	"SFML/Graphics.hpp"
+	"window.h"
+
+1710096923 source:/home/acm/mygit/verlies/src/resource_manger.cpp
+	<libintl.h>
+	<clocale>
+	<iostream>
+	<fstream>
+	<stdexcept>
+	"resource_manager.h"
+	"window.h"
+	"Logfile.h"
 

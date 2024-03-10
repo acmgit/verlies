@@ -1,1 +1,17 @@
-./Debug/verlies.log
+Logfile Errorcodes:
+----------------------------
+All ok           = 0
+File not found   = 1
+File corrupted   = 2
+Memory failure   = 3
+Illegal access   = 4
+Wrong function   = 5
+---------------------------
+
+<10.03.2024 - 19:50:36> Start of Logfile.
+<10.03.2024 - 19:50:36> Loading Resources.
+<10.03.2024 - 19:50:36> Open Window: 800x600 Title: Mainwindow
+<10.03.2024 - 19:50:36> Ressource-Manager opened.
+<10.03.2024 - 19:50:39> Window closed.
+<10.03.2024 - 19:50:39> Ressource-Manager closed.
+<10.03.2024 - 19:50:39> End of Logfile.

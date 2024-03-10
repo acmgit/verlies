@@ -8,6 +8,10 @@ Illegal access   = 4
 Wrong function   = 5
 ---------------------------
 
-<10.03.2024 - 04:40:46> Start of Logfile.
-<10.03.2024 - 04:40:46> Open Window: 800x600 Title: Main_Window
-<10.03.2024 - 04:40:49> End of Logfile.
+<10.03.2024 - 19:59:01> Start of Logfile.
+<10.03.2024 - 19:59:01> Loading Resources.
+<10.03.2024 - 19:59:01> Open Window: 800x600 Title: Hauptfenster
+<10.03.2024 - 19:59:01> Ressource-Manager opened.
+<10.03.2024 - 19:59:05> Window closed.
+<10.03.2024 - 19:59:05> Ressource-Manager closed.
+<10.03.2024 - 19:59:05> End of Logfile.

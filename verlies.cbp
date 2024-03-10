@@ -45,8 +45,10 @@
 		</Compiler>
 		<Unit filename="src/Logfile.cpp" />
 		<Unit filename="src/include/Logfile.h" />
+		<Unit filename="src/include/resource_manager.h" />
 		<Unit filename="src/include/window.h" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/resource_manger.cpp" />
 		<Unit filename="src/window.cpp" />
 		<Extensions>
 			<lib_finder>
