@@ -1,0 +1,14 @@
+Logfile Errorcodes:
+----------------------------
+All ok           = 0
+File not found   = 1
+File corrupted   = 2
+Memory failure   = 3
+Illegal access   = 4
+Wrong function   = 5
+---------------------------
+
+<10.03.2024 - 04:38:34> Start of Logfile.
+<10.03.2024 - 04:38:34> Open Window: 800x600 Title: Main_Window
+<10.03.2024 - 04:38:34> Couldn't load font: PixelOperator8.ttf
+<10.03.2024 - 04:38:37> End of Logfile.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<results version="2">
+    <cppcheck version="2.12.0" />
+    <errors>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="main.cpp" line="1" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;SFML/Graphics.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;SFML/Graphics.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="main.cpp" line="3" column="0" />
+        </error>
+    </errors>
+</results>

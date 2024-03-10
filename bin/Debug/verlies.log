@@ -1,0 +1,13 @@
+Logfile Errorcodes:
+----------------------------
+All ok           = 0
+File not found   = 1
+File corrupted   = 2
+Memory failure   = 3
+Illegal access   = 4
+Wrong function   = 5
+---------------------------
+
+<10.03.2024 - 04:40:46> Start of Logfile.
+<10.03.2024 - 04:40:46> Open Window: 800x600 Title: Main_Window
+<10.03.2024 - 04:40:49> End of Logfile.
