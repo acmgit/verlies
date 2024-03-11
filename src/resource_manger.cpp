@@ -9,9 +9,9 @@
 #include <fstream>
 #include <stdexcept>
 
-#include "resource_manager.h"
-#include "window.h"
-#include "Logfile.h"
+#include "include/resource_manager.h"
+#include "include/window.h"
+#include "include/Logfile.h"
 
 Resource_Manager::Resource_Manager()
 {

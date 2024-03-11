@@ -4,14 +4,17 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
-#include "Logfile.h"
-#include "window.h"
+#include "include/Logfile.h"
+#include "include/window.h"
 
 Window::Window(const std::string title, const sf::Vector2u dimension)
 {
     m_height = dimension.y;
     m_width = dimension.x;
+    m_pen_x = 0;
+    m_pen_y = 0;
     m_title = title;
+    m_font_size = 16;
     Log("Open Window: " << m_width << "x" << m_height << " Title: " << m_title.c_str());
 
     m_handle.create({m_width, m_height, 32}, m_title, sf::Style::Close);

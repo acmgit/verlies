@@ -21,7 +21,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "include/Logfile.h"
+#include "Logfile.h"
 #include "window.h"
 #include "resource_manager.h"
 
@@ -41,6 +41,13 @@ int main()
 
     Window* Main_Win;
     Resources = new Resource_Manager();
+    if(!Resources)
+    {
+        Log("Failed to load Resource-Manager.");
+        return -1;
+
+    }
+
     Main_Win = Resources->get_Windowhandle();
 
     Resources->set_font("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
