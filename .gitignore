@@ -1,6 +1,9 @@
 *.log
 *.o
 verlies
-/bin/Debug
-/bin/Release
-/obj
+/bin
+_deps
+CMakeFiles
+CMakeCache.txt
+*.cmake
+Makefile
