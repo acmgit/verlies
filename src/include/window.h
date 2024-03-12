@@ -19,6 +19,8 @@ public:
     void set_pen(int x = 0, int y = 0);
     void set_font_size(int character_size = 8);
     void write(const sf::Color color, const std::string text);
+    void draw_image(const sf::Sprite gfx_object);
+
 
 private:
     sf::RenderWindow m_handle;

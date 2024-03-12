@@ -101,4 +101,12 @@ void Window::write(const sf::Color Color, const std::string text)
     m_handle.draw(line);
 
 }
+
+void Window::draw_image(const sf::Sprite gfx_object)
+{
+    m_handle.draw(gfx_object);
+
+}
+
+
 #endif // window_cpp

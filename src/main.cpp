@@ -22,12 +22,13 @@
 #include <SFML/Graphics.hpp>
 
 #include "Logfile.h"
-#include "window.h"
+
 #include "resource_manager.h"
+#include "window.h"
+#include "console.h"
 
 
-
-Resource_Manager* Resources;
+Resource_Manager* Resources = nullptr;
 
 CLog ErrorLog("verlies.log");
 
@@ -39,7 +40,7 @@ int main()
     bindtextdomain("verlies", "locale");
     textdomain("verlies");
 
-    Window* Main_Win;
+    Window* Main_Win = nullptr;
     Resources = new Resource_Manager();
     if(!Resources)
     {
@@ -49,12 +50,46 @@ int main()
     }
 
     Main_Win = Resources->get_Windowhandle();
+    if(!Main_Win)
+    {
+        Log("Failed to open Window");
+        delete Resources;
+        return -1;
+
+    }
+
+    Console* Game_Console = nullptr;
+    Game_Console = new Console(Main_Win, Resources->get_console_frame());
+    if(!Game_Console)
+    {
+        Log("Failed to load the Console.")
+        delete Resources;
+        Main_Win = nullptr;
+        return -1;
+
+    }
 
     Resources->set_font("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
     Main_Win->set_pen(10, 200);
     Main_Win->write(sf::Color::Blue, _("Test .."));
+    Game_Console->draw_frame();;
     Main_Win->poll();
 
+
+
+    if(Game_Console)
+    {
+        delete Game_Console;
+        Game_Console = nullptr;
+
+    }
+
+    if(Resources)
+    {
+        delete Resources;
+        Resources = nullptr;
+
+    }
     if(Main_Win)
     {
         Main_Win = nullptr;

@@ -9,6 +9,7 @@
 #include <fstream>
 #include <stdexcept>
 
+#include "SFML/Graphics.hpp"
 #include "include/resource_manager.h"
 #include "include/window.h"
 #include "include/Logfile.h"
@@ -16,25 +17,26 @@
 Resource_Manager::Resource_Manager()
 {
     Log("Loading Resources.");
-
-    try
+    m_Output = new Window(_("Mainwindow"), sf::Vector2u(800, 600));
+    if(!m_Output)
     {
-        m_Output = new Window(_("Mainwindow"), sf::Vector2u(800, 600));
-        m_font.loadFromFile("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
-        m_Output->set_font(m_font);
-        m_Output->set_font_size(16);
+        Log("Error Window not opened.");
 
     }
-    catch(std::exception& ex)
-    {
-        Log("Error: " << ex.what());
-        m_Output = 0;
-        return;
-    }
+    Log("Window opened.")
+    m_font.loadFromFile("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
+    Log("Font loaded.")
 
+    m_Output->set_font(m_font);
+    m_Output->set_font_size(16);
+
+    m_console_frame_texture.loadFromFile("gfx/console_border.png");
+    Log("Console_Border_Texture loaded.")
+
+    m_console_frame.setTexture(m_console_frame_texture);
     m_Output->write(sf::Color::White, "Loading ...");
-
     Log("Resource-Manager opened.");
+
 }
 
 Resource_Manager::~Resource_Manager()
@@ -45,7 +47,6 @@ Resource_Manager::~Resource_Manager()
         Log("Window closed.");
         delete m_Output;
         m_Output = nullptr;
-
     }
 
     Log("Resource-Manager closed.")
@@ -71,4 +72,9 @@ void Resource_Manager::set_font(const std::string new_font)
 
 }
 
+sf::Sprite& Resource_Manager::get_console_frame()
+{
+    return m_console_frame;
+
+}
 #endif // RESOURCE_MANAGER_CPP
