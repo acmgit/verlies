@@ -15,11 +15,19 @@ public:
     void clear(sf::Color color);
     void poll();
     void close();
+
     void set_font(sf::Font);
     void set_pen(int x = 0, int y = 0);
     void set_font_size(int character_size = 8);
-    void write(const sf::Color color, const std::string text);
+    void set_color(sf::Color color);
+
+    int get_font_size();
+
+    void write(const std::string text);
+    void write(const sf::Text& text);
+
     void draw_image(const sf::Sprite gfx_object);
+    void update();
 
 
 private:
@@ -33,6 +41,7 @@ private:
     unsigned int m_height;
 
     int m_font_size;
+    sf::Color m_color;
     sf::Font m_font;
     std::string m_title;
 

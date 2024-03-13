@@ -59,7 +59,7 @@ int main()
     }
 
     Console* Game_Console = nullptr;
-    Game_Console = new Console(Main_Win, Resources->get_console_frame());
+    Game_Console = new Console(Main_Win, Resources);
     if(!Game_Console)
     {
         Log("Failed to load the Console.")
@@ -70,9 +70,19 @@ int main()
     }
 
     Resources->set_font("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
-    Main_Win->set_pen(10, 200);
-    Main_Win->write(sf::Color::Blue, _("Test .."));
-    Game_Console->draw_frame();;
+    Main_Win->clear(sf::Color::Black);
+    Log("Clear Window");
+
+    for(int i = 0; i < 10; i++)
+    {
+        Game_Console->write_line(i, _("Das ist ein Testlauf .. Das ist noch ein Testlauf .. und der Testet die Länge der Zeile .."));
+
+        Main_Win->update();
+
+    }
+
+    Game_Console->draw_frame();
+
     Main_Win->poll();
 
 

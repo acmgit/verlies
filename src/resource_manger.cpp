@@ -24,17 +24,20 @@ Resource_Manager::Resource_Manager()
 
     }
     Log("Window opened.")
+
     m_font.loadFromFile("/usr/share/fonts/TTF/DejaVuSerif-Italic.ttf");
-    Log("Font loaded.")
+    m_console_font = m_font;
+    Log("Font loaded.");
 
     m_Output->set_font(m_font);
     m_Output->set_font_size(16);
+    m_Output->set_color(sf::Color::White);
 
     m_console_frame_texture.loadFromFile("gfx/console_border.png");
     Log("Console_Border_Texture loaded.")
 
     m_console_frame.setTexture(m_console_frame_texture);
-    m_Output->write(sf::Color::White, "Loading ...");
+    m_Output->write("Loading ...");
     Log("Resource-Manager opened.");
 
 }
@@ -78,3 +81,9 @@ sf::Sprite& Resource_Manager::get_console_frame()
 
 }
 #endif // RESOURCE_MANAGER_CPP
+
+sf::Font& Resource_Manager::get_console_font()
+{
+    return m_console_font;
+
+}

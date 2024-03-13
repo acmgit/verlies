@@ -88,13 +88,26 @@ void Window::set_font_size(int character_size)
 
 }
 
-void Window::write(const sf::Color Color, const std::string text)
+int Window::get_font_size()
+{
+    return m_font_size;
+
+}
+
+void Window::set_color(sf::Color color)
+{
+    m_color = color;
+
+}
+
+
+void Window::write(const std::string text)
 {
     sf::Text line;
 
     line.setFont(m_font);
     line.setString(text);
-    line.setFillColor(Color);
+    line.setFillColor(m_color);
     line.setCharacterSize(m_font_size);
     line.move(m_pen_x, m_pen_y);
 
@@ -102,11 +115,22 @@ void Window::write(const sf::Color Color, const std::string text)
 
 }
 
+void Window::write(const sf::Text& text)
+{
+    std::string logtext = text.getString();
+    m_handle.draw(text);
+
+}
+
+
 void Window::draw_image(const sf::Sprite gfx_object)
 {
     m_handle.draw(gfx_object);
 
 }
 
-
+void Window::update()
+{
+    m_handle.display();
+}
 #endif // window_cpp

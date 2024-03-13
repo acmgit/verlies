@@ -13,11 +13,13 @@ public:
     Window* get_Windowhandle();
     void set_font(const std::string new_font);
     sf::Sprite& get_console_frame();
+    sf::Font& get_console_font();
 
 private:
 
     Window* m_Output;
     sf::Font m_font;
+    sf::Font m_console_font;
 
     sf::Texture m_console_frame_texture;
     sf::Sprite m_console_frame;
