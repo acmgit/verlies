@@ -49,21 +49,18 @@ void Console::write_line(const int line_number, const std::string line)
         return;
     }
 
-    sf::Text console_prompt;
     sf::Text console_line;
 
-    console_prompt.setFont(m_font);
-    console_prompt.setString(m_prompt);
-    console_prompt.setFillColor(m_prompt_color);
-    console_prompt.setCharacterSize(m_font_size);
-    console_prompt.move(m_line_pos_x, m_line_pos_y + (line_number * m_font_size));
-    m_window_handle->write(console_prompt);
+    console_line.setFont(m_font);
+    console_line.setString(m_prompt);
+    console_line.setFillColor(m_prompt_color);
+    console_line.setCharacterSize(m_font_size);
+    console_line.setPosition(m_line_pos_x, m_line_pos_y + (line_number * m_font_size));
+    m_window_handle->write(console_line);
 
     console_line.setString(line);
-    console_line.setFont(m_font);
     console_line.setFillColor(m_line_color);
-    console_line.setCharacterSize(m_font_size);
-    console_line.move(m_line_pos_x + m_font_size, m_line_pos_y + (line_number * m_font_size));
+    console_line.setPosition(m_line_pos_x + m_font_size, m_line_pos_y + (line_number * m_font_size));
     m_window_handle->write(console_line);
 
 }

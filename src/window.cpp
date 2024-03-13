@@ -3,6 +3,7 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 #include "include/Logfile.h"
 #include "include/window.h"
@@ -56,9 +57,10 @@ void Window::poll()
                 m_is_open = false;
 
             }
-
         }
         m_handle.display();
+        sf::Time wait = sf::milliseconds(50);
+        sf::sleep(wait);
     }
 
 }
