@@ -75,12 +75,15 @@ int main()
 
     for(int i = 0; i < 10; i++)
     {
-        Game_Console->write_line(i, _("Das ist ein Testlauf .. Das ist noch ein Testlauf .. und der Testet die Länge der Zeile .."));
-
+        std::string text = _("Testlauf ");
+        Game_Console->write_line(text);
+        Game_Console->scroll();
+        Game_Console->update();
         Main_Win->update();
 
     }
 
+    Game_Console->write_input("ich geb");
     Game_Console->draw_frame();
 
     Main_Win->poll();

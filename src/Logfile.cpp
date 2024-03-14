@@ -2,6 +2,7 @@
 #define LOG_CPP
 
 #include "include/Logfile.h"
+#include <string>
 
 // --------------------------------------------------------------------------------
 CLog::CLog( const char* pszFileName )
@@ -144,6 +145,7 @@ m_clStream.close();
 
 return *this;
 }
+
 
 //------------------------------------------------------------------------------
 CLog& CLog::operator<< ( void* n )

@@ -18,6 +18,7 @@ Window::Window(const std::string title, const sf::Vector2u dimension)
     m_font_size = 16;
     Log("Open Window: " << m_width << "x" << m_height << " Title: " << m_title.c_str());
 
+    m_miliseconds = 50;
     m_handle.create({m_width, m_height, 32}, m_title, sf::Style::Close);
     m_is_open = true;
 }
@@ -59,8 +60,7 @@ void Window::poll()
             }
         }
         m_handle.display();
-        sf::Time wait = sf::milliseconds(50);
-        sf::sleep(wait);
+        wait();
     }
 
 }
@@ -111,7 +111,7 @@ void Window::write(const std::string text)
     line.setString(text);
     line.setFillColor(m_color);
     line.setCharacterSize(m_font_size);
-    line.move(m_pen_x, m_pen_y);
+    line.setPosition(m_pen_x, m_pen_y);
 
     m_handle.draw(line);
 
@@ -119,7 +119,6 @@ void Window::write(const std::string text)
 
 void Window::write(const sf::Text& text)
 {
-    std::string logtext = text.getString();
     m_handle.draw(text);
 
 }
@@ -136,3 +135,10 @@ void Window::update()
     m_handle.display();
 }
 #endif // window_cpp
+
+void Window::wait()
+{
+    sf::Time wait = sf::milliseconds(m_miliseconds);
+    sf::sleep(wait);
+
+}

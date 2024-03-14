@@ -31,6 +31,9 @@ public:
 
 
 private:
+    void wait();
+    float m_miliseconds;
+
     sf::RenderWindow m_handle;
     bool m_is_open;
 

@@ -5,7 +5,7 @@
  * @todo write docs
  */
 
-#include <vector>
+#include <queue>
 #include <string>
 
 #include "SFML/Graphics.hpp"
@@ -19,12 +19,15 @@ public:
     ~Console();
 
     void scroll();
-    void write_line(const int line_number, const std::string line);
+    void write_line(const std::string line);
+    void write_input(const std::string line);
     void set_line_color(const sf::Color color);
-
     void draw_frame();
 
+    void update();
+
 private:
+    void write_prompt(int line);
 
     int m_lines;
     int m_pos_x;
@@ -32,6 +35,8 @@ private:
     int m_font_size;
 
     std::string m_prompt;
+    sf::Text m_input_line;
+
     sf::Color m_prompt_color;
 
     int m_line_pos_x;
@@ -43,6 +48,8 @@ private:
 
     sf::Sprite m_frame;
     sf::Font m_font;
+
+    std::deque<sf::Text> m_console;
 
 };
 
