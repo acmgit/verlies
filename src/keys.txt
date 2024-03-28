@@ -1,0 +1,24 @@
+w = Forward
+a = Left
+d = Right
+x = Back
+
+t =  Use Torch
+c =  Cast Charm
+u =  Use Bolt
+h =  Use Heal (cream, bottle)
+l =  Use Object (pendulum, crystal, clock)
+o =  Open (Door, Chest)
+
+i =  Show Inventory
+f =  Fight
+
+13 = Enter
+27 = Escape
+
+1 = Choice 1
+2 = Choice ...
+3 = Choice ...
+
+y = Choice Yes
+n = Choice No
